@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: 'Glyker';
+    src: url('../fontes/Gliker Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montaser';
+    src: url('../fontes/montserrat.regular.ttf') format('truetype');
+}
+
+#navbar-example2{
+    background-color: #0B5351;
+}
+
+.navbar .row {
+    min-height: 100px;
+    align-items: center;
+}
+
+/* Estilo do botão de navegação */
+.nav-link.dropdown-toggle {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo do botão quando estiver ativo */
+.nav-link.dropdown-toggle.active,
+.nav-link.dropdown-toggle:focus {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo da lista do dropdown */
+.dropdown-menu {
+    background-color: white;
+    border: 3px solid #0B5351;
+}
+
+/* Estilo dos itens da lista do dropdown */
+.dropdown-item {
+    color: #0B5351;
+    background-color: transparent;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown ao passar o mouse */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #BAFCD8 !important;
+    color: #0B5351 !important;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown quando ativo */
+.dropdown-item.active {
+    background-color: white;
+    border: 3px solid #0B5351;
+    color: #0B5351;
+    border-style: none;
+    font-family: 'Amaranth';
+}
+
+main{
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+main h4{
+    text-align: center;
+    font-family: 'Glyker', sans-serif;
+    font-size:xx-large;
+    color: #0B5351;;
+}
+
+main p{
+    font-family: 'Montaser', sans-serif;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.rowWelcome{
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    align-items: center;
+}
+
+.rowWelcome p{
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.rowWelcome a{
+    font-family: 'Amaranth';
+    background-color: #0B5351;
+    color: #BAFCD8;
+}
+
+.rowWelcome a:hover{
+    font-family: 'Amaranth';
+    background-color: #0B5351;
+    color: #FF6F59;
+    width: 30%;
+}
+
+.clear{
+    color: #FF6F59;
+    background-color: #0B5351;
+    margin: 0px;
+}
+.rowAbout{
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    align-items: center;
+    background-color: #0B5351;
+}
+
+.rowAbout p{
+    margin-left: 150px;
+    color: #BAFCD8;
+}
+
+footer{
+    background-color: #0B5351;
+    color: #BAFCD8;
+    font-family: 'Montaser';
+    font-size: larger;
+    width: 98.24vw;
+}
+
+footer .row{
+    padding-top: 50px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 50px;
+    align-items:center;
+}
