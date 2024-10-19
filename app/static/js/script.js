@@ -9,12 +9,10 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
     const hora = document.getElementById('hora');
     const pessoas = document.getElementById('pessoas');
 
-    // Limpar mensagens de erro
     document.querySelectorAll('.error').forEach(function(error) {
         error.style.display = 'none';
     });
 
-    // Validações básicas
     if (!nome.value.trim()) {
         document.getElementById('error-nome').style.display = 'block';
         isValid = false;
