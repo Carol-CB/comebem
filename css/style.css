@@ -1,33 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: 'Glyker';
+    src: url('../fontes/Gliker Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montaser';
+    src: url('../fontes/montserrat.regular.ttf') format('truetype');
+}
+#navbar-example2{
+    background-color: #0B5351;
+}
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+.navbar .row {
+    min-height: 100px;
+    align-items: center;
+    padding: 10px;
+}
+
+nav img{
+    width: 200px;
+}
+
+/* Estilo do botão de navegação */
+.nav-link.dropdown-toggle {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo do botão quando estiver ativo */
+.nav-link.dropdown-toggle.active,
+.nav-link.dropdown-toggle:focus {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo da lista do dropdown */
+.dropdown-menu {
+    background-color: white;
+    border: 3px solid #0B5351;
+}
+
+/* Estilo dos itens da lista do dropdown */
+.dropdown-item {
+    color: #0B5351;
+    background-color: transparent;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown ao passar o mouse */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #BAFCD8 !important;
+    color: #0B5351 !important;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown quando ativo */
+.dropdown-item.active {
+    background-color: white;
+    border: 3px solid #0B5351;
+    color: #0B5351;
+    border-style: none;
+    font-family: 'Amaranth';
+}
+
+main{
+    margin-top: 50px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
 }
 
 .form-container {
-    background-color: #fff;
+    background-color: #0B5351;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px #BAFCD8;
     width: 100%;
     max-width: 600px;
     box-sizing: border-box;
 }
 
-h2 {
+.form-container h2 {
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Glyker', sans-serif;
+    color: #BAFCD8;
 }
 
 .form-group {
     margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    color: #BAFCD8;
 }
 
 .form-group label {
@@ -49,9 +118,10 @@ h2 {
     height: 100px;
 }
 
-.btn {
-    background-color: #28a745;
+#btn {
+    background-color: #FF6F59;
     color: white;
+    font-family: 'Amaranth', sans-serif;
     border: none;
     padding: 12px;
     border-radius: 4px;
