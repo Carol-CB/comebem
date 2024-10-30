@@ -45,3 +45,10 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
         this.reset();
     }
 });
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const nomeReserva = document.getElementById("nomeReserva").value;
+    const senha = document.getElementById("senha").value;
+    alert(`Nome da Reserva: ${nomeReserva}\nSenha: ${senha}`);
+});
