@@ -34,8 +34,11 @@ def login():
 def logar():
     nome = request.form.get('nome')
     senha = request.form.get('senha')
-    # db.logar(nome, senha)
-    return redirect('/home')
+    permicao = db.logar(nome, senha)
+    if permicao:
+        return redirect('/home')
+    else:
+        return render_template('login.html')
 
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
@@ -43,7 +46,7 @@ def cadastrar():
     aniver = request.form.get('dataAniversario')
     tel = request.form.get('telefone')
     senha = request.form.get('senha')
-    # db.cadastrar(nome, aniver, tel, senha)
+    db.cadastrar(nome, aniver, tel, senha)
     return redirect('/home')
 
 @app.route('/reservar', methods=['POST'])

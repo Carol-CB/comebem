@@ -53,11 +53,14 @@
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
+    text-decoration: none;
+
 }
 
 .buttons a:hover {
     background-color: #c75347;
     transform: scale(1.05);
+    text-decoration: none;
 }
 /*FIM PÁGINA BEM-VINDO*/
 
