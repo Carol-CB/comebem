@@ -8,13 +8,10 @@ client = MongoClient(stringDB)
 db = client[nomeDB]
 reservas_collection = db['reservas'] 
 
-hash = gerarhash()
 
-def salvar(nome, telefone, data, hora, quantpessoas, observacao):
+def salvar(data, hora, quantpessoas, observacao):
     reserva = {
-        'id': hash,
-        'nome': nome,
-        'telefone': telefone,
+        'id': gerarhash(),
         'data': data,
         'hora': hora,
         'quantpessoas': quantpessoas,

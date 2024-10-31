@@ -1,142 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyle.css') }}" />
-  <title>Reservas Come-Bem</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indexStyle.css') }}" />
+    <title>Reservas Come-Bem</title>
 </head>
 
 <body class="body">
 
-  <nav id="navbar-example2" class="navbar container-fluid fixed-top">
+<nav id="navbar-example2" class="navbar container-fluid fixed-top">
     <div class="row w-100">
-      <!-- Coluna para a imagem -->
-      <div class="col-6">
-        <a class="navbar-brand" href="{{ url_for('index') }}">
-          <img src="{{ url_for('static', filename='imagens/logo.png') }}" style="width: 15vw;" />
-        </a>
-      </div>
+        <div class="col-6">
+            <a class="navbar-brand" href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='imagens/logo.png') }}" alt="Logo"/>
+            </a>
+        </div>
 
-      <div class="col-6">
-        <ul class="nav nav-pills justify-content-end">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-              aria-expanded="false">Buscar</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#scrollspyHeading1">Bem-vindo!</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#scrollspyHeading2">Sobre nós</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="#scrollspyHeading3">Galeria</a></li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li><a class="dropdown-item" href="{{ url_for('reserva') }}">Reservar!</a></li>
+        <div class="col-6">
+            <ul class="nav nav-pills justify-content-end">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Buscar</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#scrollspyHeading1">Bem-vindo!</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#scrollspyHeading2">Sobre nós</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#scrollspyHeading3">Galeria</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{{ url_for('reserva') }}">Reservar!</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{{ url_for('minhas_reservas') }}">Reservas!</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li>
-        </ul>
-      </div>
+        </div>
     </div>
-  </nav>
+</nav>
 
-  <main>
-    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example"
-      tabindex="0">
-      <div class="row rowWelcome">
-        <div class="col-lg-6 col-sm-12">
-          <h4 id="scrollspyHeading1">Seja bem-vindo!</h4>
-          <p>O sistema de reservas do restaurante Come-Bem chegou para ajudar você a fazer sua reserva com antecedência!
-            Vamos lá?</p>
-          <a type="button" class="btn btn-lg" href="{{ url_for('reserva') }}">Fazer uma reserva</a>
-        </div>
-        <div class="col-lg-6 col-sm-12">
-          <img src="{{ url_for('static', filename='imagens/Group 1.png') }}" style="width: 30vw;">
-        </div>
-      </div>
-
-      <img src="{{ url_for('static', filename='imagens/cima.png') }}" style="width: 98.24vw;">
-      <h4 id="scrollspyHeading2" class="clear" style="width: 98.24vw;">Sobre nós</h4>
-      <div class="row rowAbout" style="width: 99vw;">
-        <img src="{{ url_for('static', filename='imagens/Group 2.png') }}" class="col-lg-6 col-sm-12" style="width: 30vw;">
-        <p class="col-lg-6 col-sm-12">Com um ambiente acolhedor e um serviço dedicado, nos orgulhamos de ser um espaço
-          onde amigos e famílias se reúnem para compartilhar bons momentos e ótimas refeições. Estamos comprometidos em
-          oferecer o melhor da culinária com um toque de conforto e hospitalidade que faz com que cada visita seja
-          especial. <b>Venha saborear o melhor da vida no Come-Bem, onde comer é um prazer!</b>
-        </p>
-      </div>
-      <img src="{{ url_for('static', filename='imagens/baixo.png') }}" style="width: 98.24vw;">
-
-      <h4 id="scrollspyHeading3" class="clearM">Galeria</h4>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
+<main>
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+        <div class="row rowWelcome">
+            <div class="col-lg-6 col-sm-12">
+                <h4 id="scrollspyHeading1">Seja bem-vindo!</h4>
+                <p>O sistema de reservas do restaurante Come-Bem chegou para ajudar você a fazer sua reserva com antecedência! Vamos lá?</p>
+                <a type="button" class="btn btn-lg" href="{{ url_for('reserva') }}">Fazer uma reserva</a>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <img src="{{ url_for('static', filename='imagens/Group 1.png') }}" style="width: 30vw;" alt="Welcome Image">
+            </div>
         </div>
 
-        <div class="carousel-inner">
-          
-          <div class="carousel-item active">
-            <img src="{{ url_for('static', filename='imagens/rest 1.png') }}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='imagens/restau 1.png') }}" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="{{ url_for('static', filename='imagens/vooo 1.png') }}" class="d-block w-100" alt="...">
-          </div>
+        <img src="{{ url_for('static', filename='imagens/cima.png') }}" style="width: 98.24vw;" class="displaySM" alt="Top Image">
+        <h4 id="scrollspyHeading2" class="clear" style="width: 98.24vw;">Sobre nós</h4>
+        <div class="row rowAbout" style="width: 99vw;">
+            <img src="{{ url_for('static', filename='imagens/Group 2.png') }}" class="col-lg-6 col-sm-12" alt="About Image">
+            <p class="col-lg-6 col-sm-12">Com um ambiente acolhedor e um serviço dedicado, nos orgulhamos de ser um espaço onde amigos e famílias se reúnem para compartilhar bons momentos e ótimas refeições. Estamos comprometidos em oferecer o melhor da culinária com um toque de conforto e hospitalidade que faz com que cada visita seja especial. <b>Venha saborear o melhor da vida no Come-Bem, onde comer é um prazer!</b></p>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+        <img src="{{ url_for('static', filename='imagens/baixo.png') }}" style="width: 98.24vw;" class="displaySM" alt="Bottom Image">
+
+        <h4 id="scrollspyHeading3" class="clearM">Galeria</h4>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{{ url_for('static', filename='imagens/rest 1.png') }}" class="d-block w-100" alt="Restaurant Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='imagens/restau 1.png') }}" class="d-block w-100" alt="Restaurant Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="{{ url_for('static', filename='imagens/vooo 1.png') }}" class="d-block w-100" alt="Restaurant Image 3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
-  </main>
+</main>
 
-  <!--<footer>
-    <div class="row">
-      <div class="col-lg-6 col-sm-12">
-        <img src="{{ url_for('static', filename='imagens/inssta.png') }}" style="width: 8vw;">
-        <p>Instagram</p>
-      </div>
-      <div class="col-lg-6 col-sm-12">
-        <img src="{{ url_for('static', filename='imagens/whatsss.png') }}" style="width: 5vw;">
-        <p>Whatsapp</p>
-      </div>
-    </div>
-    <div class="row">
-      <div>
+<footer>
+    <div>
         <p>Todos os direitos reservados ao restaurante Come-Bem.</p>
-        <img src="{{ url_for('static', filename='imagens/logo2.png') }}">
-      </div>
-      <div>
         <p>Powered by: Devs DyFashad4</p>
-        <img src="{{ url_for('static', filename='imagens/DyFashad4.png') }}" style="width: 30px;">
-      </div>
     </div>
-  </footer>-->
+</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
-
 </html>
