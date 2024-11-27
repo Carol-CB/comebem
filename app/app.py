@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, jsonify
 import models.db as db
 from env import debug, port
 
@@ -36,7 +36,7 @@ def logar():
     senha = request.form.get('senha')
     permicao = db.logar(nome, senha)
     if permicao:
-        return redirect('/home')
+        return render_template('index.html', id=permicao)
     else:
         return render_template('login.html')
 
@@ -51,12 +51,28 @@ def cadastrar():
 
 @app.route('/reservar', methods=['POST'])
 def reservar():
+    idUser = request.form.get('id')
+    nomeUser = db.pegarNome(idUser)
     data = request.form.get('data')
     hora = request.form.get('hora')
     quantpessoas = request.form.get('pessoas')
     observacao = request.form.get('observacoes')
-    db.salvar(data, hora, quantpessoas, observacao)
+    db.salvar(idUser, nomeUser, data, hora, quantpessoas, observacao)
     return redirect('/home')
+
+@app.route('/pegarReservas', methods=['GET'])
+def pegarReservas():
+    idUser = request.args.get('id') 
+    if not idUser:
+        return jsonify({"erro": "ID do usuário não fornecido."}), 400
+
+    reservas = db.obter_reservas_usuario(idUser) 
+    if not reservas:
+        return jsonify({"erro": "Nenhuma reserva encontrada."}), 404
+
+    return jsonify(reservas) 
+
+
 
 if __name__ == "__main__":
     app.run(debug=debug, port=port)

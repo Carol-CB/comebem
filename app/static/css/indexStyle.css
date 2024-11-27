@@ -193,6 +193,7 @@ summary::marker {
     font-family: 'Amaranth', sans-serif;
     font-size:large;
     color:#BAFCD8;
+    word-break: break-all;
 }
 
 @media (max-width: 767px){

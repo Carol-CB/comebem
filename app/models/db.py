@@ -10,9 +10,11 @@ reservas_collection = db['reservas']
 usuarios_collection = db['usuarios']
 
 
-def salvar(data, hora, quantpessoas, observacao):
+def salvar(idUser, nomeUser, data, hora, quantpessoas, observacao):
     reserva = {
         'id': gerarhash(),
+        'idUser': idUser,
+        'nomeUser': nomeUser,
         'data': data,
         'hora': hora,
         'quantpessoas': quantpessoas,
@@ -45,15 +47,22 @@ def cadastrar(nome, aniver, telefone, senha):
 def logar(nome, senha):
     usuario = usuarios_collection.find_one({'nome': nome})
     if usuario and usuario['senha'] == senha:
-        # return usuario['id']
-        return True
+        return usuario['id']
     return False
 
 
 def obter_reservas_usuario(usuario_id):
     try:
-        reservas = list(reservas_collection.find({'usuario_id': usuario_id}))
-        return reservas
+        reservas = list(reservas_collection.find({'idUser': usuario_id}))
+        
+        for reserva in reservas:
+            reserva['_id'] = str(reserva['_id']) 
+        
+        return reservas 
     except Exception as e:
         print(f"Ocorreu um erro ao obter as reservas, erro: {e}")
-        return []
+        return [] 
+
+def pegarNome(id):
+    nomeUser = usuarios_collection.find_one({'id': id})
+    return nomeUser['nome']
