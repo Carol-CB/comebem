@@ -75,7 +75,7 @@
           </div>
           <div class="btn-container">
             <button class="btn btn-aceitar" data-id="{{ reserva.id }}" data-status="finalizado">Finalizar</button>
-            <button class="btn btn-negar" data-id="{{ reserva.id }}" data-status="contato">Contato</button>
+            <button class="btn btn-contato" data-id="{{ reserva.id }}" data-status="contato">Contato</button>
           </div>
         </div>
       {% endfor %}
@@ -115,7 +115,7 @@
     crossorigin="anonymous"></script>
     <script>
        document.addEventListener("DOMContentLoaded", function () {
-  const buttons = document.querySelectorAll(".btn-aceitar, .btn-negar, .btn-contato");
+  const buttons = document.querySelectorAll(".btn-aceitar, .btn-negar");
 
   buttons.forEach((button) => {
     button.addEventListener("click", function () {

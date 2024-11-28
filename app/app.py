@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, request, url_for, jsonify
 import models.db as db
 from env import debug, port
+from datetime import datetime
 
 app = Flask(__name__) 
 app.config['SECRET_KEY'] = 'teste'

@@ -44,7 +44,7 @@
         <form id="reservaForm" action="/reservar" method="post">
             <div class="form-group">
                 <label for="data">Data</label>
-                <input type="date" id="data" name="data" required />
+                <input type="date" id="data" name="data" required min="{{ today }}" />
                 <span class="error" id="error-data">Por favor, insira a data.</span>
             </div>
 
@@ -79,6 +79,11 @@
 <script>
     let idUser = sessionStorage.getItem('idUser')
     document.querySelector('#id').value = idUser
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('data').setAttribute('min', today);
+    });
 </script>
 </body>
 </html>
