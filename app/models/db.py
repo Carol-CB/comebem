@@ -30,8 +30,9 @@ def salvar(idUser, nomeUser, data, hora, quantpessoas, observacao):
     
 
 def cadastrar(nome, aniver, telefone, senha):
+    hash = gerarhash()
     usuario = {
-        'id': gerarhash(),
+        'id': hash,
         'nome': nome,
         'data_aniversario': aniver,
         'telefone': telefone,
@@ -42,6 +43,7 @@ def cadastrar(nome, aniver, telefone, senha):
         usuarios_collection.insert_one(usuario)
     except Exception as e:
         print(f"Ocorreu um erro ao cadastrar o usuário no banco, erro: {e}")
+    return hash
 
 
 def logar(nome, senha):

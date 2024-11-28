@@ -50,8 +50,8 @@ def cadastrar():
     aniver = request.form.get('dataAniversario')
     tel = request.form.get('telefone')
     senha = request.form.get('senha')
-    db.cadastrar(nome, aniver, tel, senha)
-    return redirect('/home')
+    id = db.cadastrar(nome, aniver, tel, senha)
+    return render_template('index.html', id=id)
 
 @app.route('/reservar', methods=['POST'])
 def reservar():
