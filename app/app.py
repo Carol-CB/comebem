@@ -34,6 +34,9 @@ def login():
 def logar():
     nome = request.form.get('nome')
     senha = request.form.get('senha')
+    if nome == 'gerencia' and senha == '123':
+        reservas = db.obter_reservas()
+        return render_template('reservas.html', reservas=reservas)
     permicao = db.logar(nome, senha)
     if permicao:
         return render_template('index.html', id=permicao)
@@ -72,7 +75,27 @@ def pegarReservas():
 
     return jsonify(reservas) 
 
+@app.route('/atualizar_reserva', methods=['POST'])
+def atualizar_reserva():
+    try:
+        data = request.get_json()  
+        if not data:
+            return jsonify({"erro": "Nenhum dado fornecido."}), 400
+        
+        reserva_id = data.get('id')
+        status = data.get('status')
+        if not reserva_id or not status:
+            return jsonify({"erro": "ID ou status ausente."}), 400
+        
+        db.atualizar_reserva(reserva_id, status)
+        reservas = db.obter_reservas()
+        
+        for reserva in reservas:
+            if '_id' in reserva:
+                reserva['_id'] = str(reserva['_id'])
+        
+        return jsonify(reservas), 200
+    except Exception as e:
+        print(f"Erro no endpoint '/atualizar_reserva': {e}")
+        return jsonify({"erro": "Erro interno no servidor."}), 500
 
-
-if __name__ == "__main__":
-    app.run(debug=debug, port=port)

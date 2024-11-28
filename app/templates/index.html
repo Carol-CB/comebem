@@ -105,6 +105,9 @@
     if (sessionStorage.getItem('idUser') == "") {
         sessionStorage.setItem("idUser", "{{id}}");
     }
+    if (!sessionStorage.getItem('idUser')) {
+        sessionStorage.setItem("idUser", "{{id}}");
+    }
 </script>
 </body>
 </html>

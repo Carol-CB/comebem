@@ -66,3 +66,27 @@ def obter_reservas_usuario(usuario_id):
 def pegarNome(id):
     nomeUser = usuarios_collection.find_one({'id': id})
     return nomeUser['nome']
+
+def obter_reservas():
+    try:
+        reservas = list(reservas_collection.find({}, {'_id': False})) 
+        return reservas
+    except Exception as e:
+        print(f"Erro ao obter reservas: {e}")
+        return []
+
+
+
+def atualizar_reserva(reserva_id, status):
+    try:
+        resultado = reservas_collection.update_one(
+            {'id': reserva_id},
+            {'$set': {'status': status, 'atualizado_em': datetime.now()}}
+        )
+        if resultado.matched_count == 0:
+            raise ValueError(f"Nenhuma reserva encontrada com o ID: {reserva_id}")
+    except Exception as e:
+        print(f"Erro ao atualizar reserva: {e}")
+        raise
+
+
