@@ -1,0 +1,257 @@
+body{
+    overflow-x: hidden;
+}
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@font-face {
+    font-family: 'Glyker';
+    src: url('../fontes/Gliker Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Montaser';
+    src: url('../fontes/montserrat.regular.ttf') format('truetype');
+}
+
+#navbar-example2{
+    background-color: #0B5351;
+}
+
+.navbar .row {
+    min-height: 100px;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+}
+
+/* Estilo do botão de navegação */
+.nav-link.dropdown-toggle {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo do botão quando estiver ativo */
+.nav-link.dropdown-toggle.active,
+.nav-link.dropdown-toggle:focus {
+    background-color: #BAFCD8;
+    color: #0B5351;
+    font-family: 'Amaranth';
+}
+
+/* Estilo da lista do dropdown */
+.dropdown-menu {
+    background-color: white;
+    border: 3px solid #0B5351;
+}
+
+/* Estilo dos itens da lista do dropdown */
+.dropdown-item {
+    color: #0B5351;
+    background-color: transparent;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown ao passar o mouse */
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background-color: #BAFCD8 !important;
+    color: #0B5351 !important;
+    font-family: 'Amaranth';
+}
+
+/* Estilo dos itens da lista do dropdown quando ativo */
+.dropdown-item.active {
+    background-color: white;
+    border: 3px solid #0B5351;
+    color: #0B5351;
+    border-style: none;
+    font-family: 'Amaranth';
+}
+
+main{
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+
+main h4{
+    text-align: center;
+    font-family: 'Glyker', sans-serif;
+    font-size:xx-large;
+    color: #0B5351;
+}
+
+main p{
+    font-family: 'Montaser', sans-serif;
+    font-size: larger;
+    font-weight: 600;
+}
+
+.rowWelcome{
+    margin-left: 60px;
+    margin-right: 60px;
+    text-align: center;
+    align-items: center;
+}
+
+.rowWelcome p{
+    margin-right: 80px;
+    margin-left: 80px;
+    margin-top: 20px;
+}
+
+.rowWelcome a{
+    font-family: 'Amaranth';
+    background-color: #0B5351;
+    color: #BAFCD8;
+}
+
+.rowWelcome a:hover{
+    font-family: 'Amaranth';
+    background-color: #0B5351;
+    color: #FF6F59;
+    width: 30%;
+}
+
+.clear{
+    color: #FF6F59;
+    background-color: #0B5351;
+    margin: 0px;
+}
+.rowAbout{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    align-items: center;
+    background-color: #0B5351;
+}
+
+.rowAbout p{
+    color: #BAFCD8;
+}
+
+footer{
+    background-color: #0B5351;
+    color: #BAFCD8;
+    font-family: 'Montaser';
+    font-size: larger;
+    width: 98.24vw;
+    margin: 0px;
+    padding: 50px;
+    text-align: center;
+}
+
+.minhasReservas {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    background-color: #0B5351;
+    flex-wrap: wrap;
+}
+
+
+.minhasReservas details{
+    border-radius: 20px;
+    border: #BAFCD8;
+    box-shadow: 0 0 10px #BAFCD8;
+    padding: 20px;
+}
+
+summary::marker {
+    content: "";
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+.titleReserva{
+    text-align: center;
+    font-family: 'Glyker', sans-serif;
+    font-size:xx-large;
+    color:#FF6F59;
+}
+
+.statusPedido{
+    text-align: center;
+    font-family: 'Amaranth', sans-serif;
+    font-size:large;
+    color:#BAFCD8;
+}
+
+.infos{
+    margin-top: 20px;
+    color: white;
+    font-size:small;
+}
+
+#idPedido{
+    text-align: center;
+    font-family: 'Amaranth', sans-serif;
+    font-size:large;
+    color:#BAFCD8;
+}
+
+@media (max-width: 767px){
+    main{
+        margin-top: 150px;
+        margin-bottom: 20px;
+    }
+    
+    main h4{
+        font-size: 1.5rem;
+    }
+    
+    main p{
+        font-size: large;
+    }
+    
+    .rowWelcome{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    .rowWelcome p{
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .rowWelcome img{
+        margin-top: 20px;
+    }
+    
+    .clear{
+        color: #FF6F59;
+        background-color: #0B5351;
+        margin: 0px;
+    }
+    .rowAbout{
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .displaySM{
+        display: none;
+    }
+    
+    .rowAbout p{
+        margin-left: 0px;
+        padding: 10px;
+        color: #BAFCD8;
+        margin-top: 20px;
+    }
+    
+    footer{
+        background-color: #0B5351;
+        color: #BAFCD8;
+        font-family: 'Montaser';
+        font-size: larger;
+        width: 98.24vw;
+        margin: 0px;
+        padding: 50px;
+        text-align: center;
+    }
+}
